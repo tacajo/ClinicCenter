@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src= 'https://powernetco.com/files/2018-04/icon-healthcare.png' 
+        style="width:50px;height:50px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLinkActive='active' [routerLink]="['/patient-profile']">Profile<span class="sr-only"></span></a>
+          </li>
+        
+      </ul>
+      
+    </div>
+    <app-logout></app-logout>
+  </nav>
+    <!-- <div class="container patientHomePage">
+            <div class="card border-light mb-3" style="width: 20rem;" id="newform1">
+                <ul class="list-group list-group-flush" id="options">
+                    <li class="list-group-item"><a href="#" routerLinkActive='active' [routerLink]="['/clinics']">Clinics</a></li>
+                    <li class="list-group-item"><a href="#" routerLinkActive='active' [routerLink]="['/historyOfAppointments']">History</a></li>
+                    <li class="list-group-item"><a href="#" routerLinkActive='active' [routerLink]="['/medicalRecord']">Medical record</a></li>
+                    <li class="list-group-item"><a href="#" routerLinkActive='active' [routerLink]="['/patient-profile']">Profile</a></li>
+                </ul>
+            </div>
+
+    </div> -->
+    <!--========Cards========-->
+<div class="container-fluid main-cont">
+  <div class="row news-row">
+      <div class="container-fluid col-md-12 col-sm-6 justify-content-center news-block">
+          <div class="card-group">
+            <div class="underlay">
+              <div class="card">
+                  <div class="card-img-top clinicsImage"></div>
+                  <div class="card-block" >
+                  <h5 class="card-title" style="font-size: 25px;"><a id="clinicSearch" href="#" routerLinkActive='active' [routerLink]="['/clinics']">Clinics</a></h5>
+                  </div>
+              </div>
+            </div>
+            <div class="underlay">
+             <div class="card">
+                  <div class="card-img-top historyImage"></div>
+                  <div class="card-block" >
+                    <h5 class="card-title" style="font-size: 25px;"><a class="prosirenje" href="#" routerLinkActive='active' [routerLink]="['/historyOfAppointments']">History</a></h5>
+                  </div>
+                </div>
+              </div>
+              <div class="underlay">
+                <div class="card">
+                  <div class="card-img-top mrImage" ></div>
+                  <div class="card-block" >
+                    <h5 class="card-title" style="font-size: 25px;"><a href="#" routerLinkActive='active' [routerLink]="['/medicalRecord']">Medical record</a></h5>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+   
+  <!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <b>Tim 52</b>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->

@@ -1,0 +1,147 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src= 'https://powernetco.com/files/2018-04/icon-healthcare.png' 
+        style="width:50px;height:50px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" routerLinkActive='active' [routerLink]="['/profileClinicCenterAdmin']">Home <span class="sr-only">(current)</span></a>
+      
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLinkActive='active' [routerLink]="['/profileClinicCenterAdmin']">Profile<span class="sr-only">(current)</span></a>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </nav>
+
+<div class= "container"  >
+
+  <h4>Clinics:</h4>
+  <table class="table table-hover">
+      <thead class="thead-light">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Description</th>
+            <th>Profit</th>
+            <th>Pricelist</th>
+            <th>Add admin</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let clinic of clinics'>
+              <td>{{ clinic.id }}</td>
+              <td>{{ clinic.name }}</td>
+              <td>{{ clinic.address }}</td>
+              <td>{{ clinic.description }}</td>
+              <td>{{ clinic.profit }}</td>
+              <td>{{ clinic.pricelist }}</td>
+              <td><a class="btn btn-outline-success" (click)="addAdminForm(clinic)" style="font-size: 14px;">Add admin</a></td>
+            </tr>
+          </tbody>
+  </table>
+  <div>
+    
+    <form [formGroup]="form" (ngSubmit)="onSubmitAdmin() && form.valid" novalidate *ngIf="this.addAdminClicked">
+        <h4>Add new admin to clinic #{{ clinicToAddNewAdmin.id }}</h4>
+        <div class="form-row">
+          <div class="col-md-4">
+            <label  for="usernameCA">Username:</label>
+            <input  formControlName="Username" [ngClass]="{'is-invalid': form.get('Username').touched && form.get('Username').invalid}" class="form-control" type="text" class="form-control" id="usernameCA" name="username" placeholder="Username"  [(ngModel)]="clinicAdministrator.username" required>
+          </div>
+          
+          <div class="col-md-4">
+            <label for="passwordCA">Password:</label>
+            <input formControlName="Password" [ngClass]="{'is-invalid': form.get('Password').touched && form.get('Password').invalid}" class="form-control" type="password" class="form-control" id="passwordCA" placeholder="Password" [(ngModel)]="clinicAdministrator.password" name="passwordCA"  required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="firstNameCA">First Name:</label>
+            <input formControlName="firstNameCA" [ngClass]="{'is-invalid': form.get('firstNameCA').touched && form.get('firstNameCA').invalid}" class="form-control" type="text" class="form-control" id="firstNameCA" placeholder="First Name" [(ngModel)]="clinicAdministrator.firstName" name="firstNameCA"  required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="lastNameCA">Last Name:</label>
+            <input formControlName="lastNameCA" [ngClass]="{'is-invalid': form.get('lastNameCA').touched && form.get('lastNameCA').invalid}" class="form-control" type="text" class="form-control" id="lastNameCA" placeholder="Last Name" [(ngModel)]="clinicAdministrator.lastName" name="lastNameCA"  required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="emailCA">Email:</label>
+            <input formControlName="emailCA" [ngClass]="{'is-invalid': form.get('emailCA').touched && form.get('emailCA').invalid}" class="form-control" type="text" class="form-control" id="emailCA" placeholder="Email" [(ngModel)]="clinicAdministrator.email" name="emailCA"  required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="addressCA">Address:</label>
+            <input formControlName="addressCA" [ngClass]="{'is-invalid': form.get('addressCA').touched && form.get('addressCA').invalid}" class="form-control" type="text" class="form-control" id="addressCA" placeholder="Address" [(ngModel)]="clinicAdministrator.address" name="addressCA"  required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="cityCA">City:</label>
+            <input formControlName="cityCA" [ngClass]="{'is-invalid': form.get('cityCA').touched && form.get('cityCA').invalid}" class="form-control" type="text" class="form-control" id="cityCA" placeholder="City" [(ngModel)]="clinicAdministrator.city" name="cityCA"  required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="countryCA">Country:</label>
+            <input formControlName="countryCA" [ngClass]="{'is-invalid': form.get('countryCA').touched && form.get('countryCA').invalid}" class="form-control" type="text" class="form-control" id="countryCA" placeholder="Country" [(ngModel)]="clinicAdministrator.country" name="countryCA"  required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="mobileNumberCA">Mobile Number:</label>
+            <input formControlName="mobileNumberCA" [ngClass]="{'is-invalid': form.get('mobileNumberCA').touched && form.get('mobileNumberCA').invalid}" class="form-control" type="number" class="form-control" id="mobileNumberCA" placeholder="MobileNumber" [(ngModel)]="clinicAdministrator.mobileNumber" name="mobileNumberCA"  required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="jmbgCA">Jmbg:</label>
+            <input formControlName="jmbgCA" [ngClass]="{'is-invalid': form.get('jmbgCA').touched && form.get('jmbgCA').invalid}" class="form-control" type="number" class="form-control" id="jmbgCA" placeholder="jmbg" [(ngModel)]="clinicAdministrator.jmbg" name="jmbgCA"  required>
+          </div>
+        </div>
+        <button class="btn btn-success" [disabled]="!form.valid" type="submit" >Add admin</button>
+      </form>
+  </div>
+
+
+
+  
+  <form  [formGroup]="form2" (ngSubmit)="onSubmit() && form.valid" novalidate *ngIf="!this.addAdminClicked">
+      <h4>Add new clinic:</h4>
+      <div class="form-group">
+        <div class="col-md-4 mb-3">
+          <label for="name">Clinic Name:</label>
+          <input formControlName="name" [ngClass]="{'is-invalid': form2.get('name').touched && form2.get('name').invalid}" type="text" class="form-control" id="name" name="name" placeholder="Clinic name"  [(ngModel)]="clinic.name" required>
+        </div>
+        
+      </div>
+      <div class="form-group">
+        <div class="col-md-6 mb-3">
+          <label for="address">Address:</label>
+          <input formControlName="address" disabled="true" [ngClass]="{'is-invalid': form2.get('address').touched && form2.get('address').invalid}" type="text" class="form-control" id="address" placeholder="Address" [(ngModel)]="address" name="address"  required>
+        </div>
+      </div>
+ 
+     
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea formControlName="description" [ngClass]="{'is-invalid': form2.get('description').touched && form2.get('description').invalid}" class="form-control" rows="5" placeholder="Description" [(ngModel)]="clinic.description" name="clinicDescription" id="description" required></textarea>
+      </div>
+      <button class="btn btn-success" [disabled]="!form2.valid" type="submit">Add clinic</button>
+    </form>
+    <div id="map" class="map"></div>
+</div>
+  <!-- Footer -->
+  <footer class="page-footer font-small special-color-dark pt-4">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <b>Tim 52</b>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->

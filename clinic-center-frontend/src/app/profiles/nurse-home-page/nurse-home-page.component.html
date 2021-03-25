@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src= 'https://powernetco.com/files/2018-04/icon-healthcare.png' 
+      style="width:50px;height:50px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" routerLinkActive='active' [routerLink]="['/nurse-home-page']">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#" routerLinkActive='active' [routerLink]="['/doctor']">Profile<span class="sr-only">(current)</span></a>
+        </li>
+      
+    </ul>
+    
+      <app-logout></app-logout>
+  </div>
+</nav>
+    <div class="container" >
+            <div class="card border-light mb-3" style="width: 18rem;" id="form">
+                <ul class="list-group list-group-flush" id="options">
+                    <li class="list-group-item"><a href="#" routerLinkActive='active' [routerLink]="['/patients']">Patients</a></li>
+                    <li class="list-group-item"><a href="#" routerLinkActive='active' [routerLink]="['/calendar']">Calendar</a></li>
+                    <li class="list-group-item"><a style="color: dodgerblue;" (click)="change()" routerLinkActive='active'>Request Holiday</a></li>
+                    
+                </ul>
+            </div>
+
+            <div *ngIf="this.isButtonVisible">
+              <app-holiday-request></app-holiday-request>
+            </div>
+
+    </div>
+  <app-auth-recipe></app-auth-recipe>
+  <!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <b>Tim 52</b>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
