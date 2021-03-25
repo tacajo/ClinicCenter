@@ -1,9 +1,9 @@
 # ClinicCenter
 
-# Project: Clinic center
-# Project description: Web application used for scheduling appointments and operations 
+### Project: Clinic center
+### Project description: Web application used for scheduling appointments and operations 
 
-# Responsibilities: 
+### Responsibilities: 
 
 ●	Participated in the implementation of features such as scheduling appointments and operations by the employees (doctors, nurses and other medical staff) of the clinic.
 
@@ -18,4 +18,4 @@
 ●	Database modeling using MySQL.  
 
 
-Environment: Java, Spring Boot, Hibernate, MySQL, Angular 8, TypeScript, HTML, CSS, Rest web services, Git version control 
+###### Environment: Java, Spring Boot, Hibernate, MySQL, Angular 8, TypeScript, HTML, CSS, Rest web services, Git version control 
